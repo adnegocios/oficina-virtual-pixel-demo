@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Oficina Virtual Pixel</title>
+    <meta name="description" content="Oficina en pixel art que muestra en tiempo real a los agentes de Claude Code trabajando." />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="css/estilos.css" />
+  </head>
+  <body>
+    <header class="barra">
+      <div class="marca">
+        <span class="logo" aria-hidden="true"></span>
+        <h1>Oficina Virtual <span id="nombre-oficina"></span></h1>
+      </div>
+      <div class="controles">
+        <span id="conexion" class="conexion" role="status">● Conectando…</span>
+        <button id="boton-demo" type="button" aria-pressed="false">▶ Modo demo</button>
+      </div>
+    </header>
+
+    <main class="contenido">
+      <section id="escena" class="escena" aria-label="Vista de la oficina">
+        <canvas id="lienzo" width="384" height="240" role="img"
+          aria-label="Oficina en pixel art con los agentes en sus escritorios"></canvas>
+      </section>
+
+      <aside class="panel">
+        <section class="bloque">
+          <h2>Equipo <small>✓ tareas · ⚒ herramientas</small></h2>
+          <ul id="lista-agentes" class="agentes"></ul>
+        </section>
+
+        <section class="bloque actividad">
+          <h2>Actividad reciente</h2>
+          <p id="actividad-vacia" class="vacio">Sin actividad todavía. Usa Claude Code con los hooks activos o pulsa «Modo demo».</p>
+          <ol id="lista-actividad" class="registro" aria-live="polite"></ol>
+        </section>
+
+        <details class="bloque leyenda">
+          <summary>Leyenda de estados</summary>
+          <ul>
+            <li><b>Disponible</b>: sentado, respira.</li>
+            <li><b>Escribiendo</b>: Edit, Write o Bash.</li>
+            <li><b>Leyendo</b>: Read, Grep o Glob (con un papel en la mano).</li>
+            <li><b>Buscando en la web</b>: WebSearch, WebFetch o navegador.</li>
+            <li><b>Esperando</b>: globo «?» cuando pide permiso o respuesta.</li>
+            <li><b>Terminó</b>: levanta el brazo y aparece un ✓.</li>
+            <li><b>Entregando</b>: camina con un documento al escritorio de otro agente.</li>
+          </ul>
+        </details>
+      </aside>
+    </main>
+
+    <script type="module" src="js/app.js"></script>
+  </body>
+</html>

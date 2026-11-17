@@ -1,0 +1,110 @@
+{
+  "oficina": {
+    "nombre": "AD-NEGOCIOS"
+  },
+  "agentePrincipal": "jack-g-gerente-financiero",
+  "agentes": [
+    {
+      "id": "jack-g-gerente-financiero",
+      "nombre": "Jack G",
+      "rol": "Gerente Financiero",
+      "alias": ["gerente-financiero"],
+      "escritorio": { "x": 7, "y": 3, "tipo": "gerente" },
+      "apariencia": {
+        "ropa": "#2b3a67",
+        "pantalon": "#232a40",
+        "piel": "#e0ac69",
+        "pelo": "#7d7d86",
+        "peinado": "corto",
+        "accesorio": "corbata",
+        "acento": "#c0392b",
+        "objeto": "lampara"
+      }
+    },
+    {
+      "id": "tony-a-descarga-archivo",
+      "nombre": "Tony A",
+      "rol": "Descarga y Archivo (SRI)",
+      "alias": ["descargas-sri"],
+      "escritorio": { "x": 2, "y": 7 },
+      "apariencia": {
+        "ropa": "#2e8b57",
+        "pantalon": "#3b4a6b",
+        "piel": "#c68642",
+        "pelo": "#3b2a1f",
+        "peinado": "corto",
+        "accesorio": "gorra",
+        "acento": "#f39c12",
+        "objeto": "taza"
+      }
+    },
+    {
+      "id": "july-r-reportes",
+      "nombre": "July R",
+      "rol": "Reportes y dashboard",
+      "alias": ["reportes"],
+      "escritorio": { "x": 7, "y": 7 },
+      "apariencia": {
+        "ropa": "#8e44ad",
+        "pantalon": "#2f2a45",
+        "piel": "#f1c27d",
+        "pelo": "#24160f",
+        "peinado": "cola",
+        "accesorio": "lazo",
+        "acento": "#ff6fa8",
+        "objeto": "grafico"
+      }
+    },
+    {
+      "id": "sandy-c-contador",
+      "nombre": "Sandy C",
+      "rol": "Contabilidad y balances",
+      "alias": ["contabilidad"],
+      "escritorio": { "x": 12, "y": 7 },
+      "apariencia": {
+        "ropa": "#b03a48",
+        "pantalon": "#2d2d3a",
+        "piel": "#f5d0a9",
+        "pelo": "#a0522d",
+        "peinado": "rizado",
+        "accesorio": "lentes",
+        "acento": "#1d1b2a",
+        "objeto": "carpetas"
+      }
+    },
+    {
+      "id": "beto-i-impuestos",
+      "nombre": "Beto I",
+      "rol": "Impuestos y declaraciones",
+      "alias": ["tributacion"],
+      "escritorio": { "x": 2, "y": 11 },
+      "apariencia": {
+        "ropa": "#d4a94f",
+        "pantalon": "#4a3b2a",
+        "piel": "#8d5524",
+        "pelo": "#2c1b10",
+        "peinado": "rapado",
+        "accesorio": "visera",
+        "acento": "#27ae60",
+        "objeto": "calculadora"
+      }
+    },
+    {
+      "id": "martha-t-tesoreria",
+      "nombre": "Martha T",
+      "rol": "Tesorería: cobros, pagos y bancos",
+      "alias": ["cobros-pagos"],
+      "escritorio": { "x": 7, "y": 11 },
+      "apariencia": {
+        "ropa": "#16a085",
+        "pantalon": "#2b3440",
+        "piel": "#e8b88a",
+        "pelo": "#5a3220",
+        "peinado": "largo",
+        "accesorio": "audifonos",
+        "acento": "#e74c3c",
+        "objeto": "monedas"
+      }
+    }
+  ]
+}

@@ -1,0 +1,339 @@
+/* Oficina Virtual Pixel — estilos (tema retro oscuro) */
+
+:root {
+  --fondo: #161824;
+  --superficie: #20233a;
+  --superficie-2: #292d48;
+  --borde: #383d60;
+  --texto: #ecebe3;
+  --texto-suave: #a3a6c2;
+  --acento: #f2c14e;
+  --ok: #3fae5a;
+  --aviso: #ffd479;
+  --error: #e8615a;
+  --fuente: ui-monospace, 'Cascadia Mono', 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  background: var(--fondo);
+  color: var(--texto);
+  font: 14px/1.4 var(--fuente);
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------- barra superior ---------- */
+.barra {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 16px;
+  background: var(--superficie);
+  border-bottom: 3px solid #0d0e16;
+  flex-wrap: wrap;
+}
+
+.marca {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  width: 16px;
+  height: 16px;
+  background:
+    linear-gradient(#3b2a1f 0 0) 4px 2px / 8px 4px no-repeat,
+    linear-gradient(#e0ac69 0 0) 4px 6px / 8px 4px no-repeat,
+    linear-gradient(#2e8b57 0 0) 2px 10px / 12px 6px no-repeat;
+  image-rendering: pixelated;
+}
+
+h1 {
+  font-size: 16px;
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+h1 span {
+  color: var(--acento);
+}
+
+.controles {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.conexion {
+  font-size: 12px;
+  color: var(--texto-suave);
+}
+.conexion.ok { color: var(--ok); }
+.conexion.caido { color: var(--aviso); }
+.conexion.error { color: var(--error); }
+.conexion.demo { color: var(--acento); }
+
+button {
+  font: inherit;
+  font-weight: bold;
+  color: #1a1420;
+  background: var(--acento);
+  border: 2px solid #1a1420;
+  box-shadow: 0 3px 0 #1a1420;
+  padding: 5px 12px;
+  cursor: pointer;
+}
+button:hover { filter: brightness(1.08); }
+button:active { transform: translateY(2px); box-shadow: 0 1px 0 #1a1420; }
+button:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+button[aria-pressed='true'] { background: #e8615a; }
+
+/* ---------- distribución ---------- */
+.contenido {
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 360px;
+}
+
+.escena {
+  position: relative;
+  min-height: 0;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 40%, #23263d 0, var(--fondo) 70%);
+}
+
+/* El lienzo va centrado y fuera del flujo para que su tamaño no afecte al contenedor */
+#lienzo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  border: 3px solid #0d0e16;
+  box-shadow: 0 8px 0 rgba(0, 0, 0, 0.35);
+}
+
+.panel {
+  background: var(--superficie);
+  border-left: 3px solid #0d0e16;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.bloque {
+  padding: 12px 14px;
+  border-bottom: 2px solid #0d0e16;
+}
+
+h2 {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 0 8px;
+  color: var(--acento);
+}
+
+h2 small {
+  font-size: 11px;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--texto-suave);
+  font-weight: normal;
+}
+
+/* ---------- tarjetas de agentes ---------- */
+.agentes {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 6px;
+}
+
+.agente {
+  display: grid;
+  grid-template-columns: 8px minmax(0, 1fr) auto;
+  grid-template-areas:
+    'chip datos cuentas'
+    'chip estado estado';
+  column-gap: 8px;
+  padding: 6px 8px;
+  background: var(--superficie-2);
+  border: 2px solid var(--borde);
+}
+
+.chip {
+  grid-area: chip;
+  background: var(--color-agente);
+  border: 1px solid #0d0e16;
+}
+
+.datos {
+  grid-area: datos;
+  min-width: 0;
+  display: flex;
+  gap: 6px;
+  align-items: baseline;
+}
+
+.nombre {
+  white-space: nowrap;
+}
+
+.rol {
+  color: var(--texto-suave);
+  font-size: 11px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cuentas {
+  grid-area: cuentas;
+  display: flex;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--texto-suave);
+}
+
+.estado {
+  grid-area: estado;
+  font-size: 12px;
+  color: var(--texto-suave);
+}
+
+.estado::before {
+  content: '■ ';
+  color: #5c6080;
+}
+
+.agente[data-estado='escribiendo'] .estado::before { color: #ffd479; }
+.agente[data-estado='leyendo'] .estado::before { color: #c9d4ff; }
+.agente[data-estado='web'] .estado::before { color: #5aa9e6; }
+.agente[data-estado='esperando'] { border-color: var(--aviso); }
+.agente[data-estado='esperando'] .estado { color: var(--aviso); }
+.agente[data-estado='esperando'] .estado::before { color: var(--aviso); }
+.agente[data-estado='listo'] .estado,
+.agente[data-estado='listo'] .estado::before { color: var(--ok); }
+.agente[data-estado='caminando'] .estado::before,
+.agente[data-estado='reunion'] .estado::before { color: #f39c12; }
+
+/* ---------- actividad ---------- */
+.actividad {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.vacio {
+  color: var(--texto-suave);
+  font-size: 12px;
+  margin: 0;
+}
+
+.registro {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  flex: 1;
+  min-height: 0;
+}
+
+.item {
+  display: flex;
+  gap: 8px;
+  align-items: baseline;
+  padding: 3px 0 3px 8px;
+  border-left: 3px solid var(--color-agente, #5c6080);
+  margin-bottom: 3px;
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+
+.hora {
+  color: var(--texto-suave);
+  font-size: 11px;
+  flex: none;
+}
+
+.texto {
+  flex: 1;
+}
+
+.etiqueta-demo {
+  font-size: 10px;
+  color: #1a1420;
+  background: var(--acento);
+  padding: 0 4px;
+  flex: none;
+}
+
+.separador {
+  color: var(--acento);
+  font-size: 11px;
+  text-align: center;
+  padding: 4px 0;
+}
+
+.leyenda summary {
+  cursor: pointer;
+  color: var(--acento);
+  font-size: 12px;
+}
+
+.leyenda ul {
+  margin: 8px 0 0;
+  padding-left: 18px;
+  font-size: 12px;
+  color: var(--texto-suave);
+}
+
+.leyenda b {
+  color: var(--texto);
+}
+
+/* ---------- pantallas pequeñas ---------- */
+@media (max-width: 900px) {
+  body {
+    height: auto;
+    min-height: 100%;
+  }
+  .contenido {
+    grid-template-columns: 1fr;
+  }
+  .escena {
+    aspect-ratio: 384 / 240;
+    width: 100%;
+  }
+  #lienzo {
+    max-width: calc(100% - 16px);
+    height: auto !important;
+  }
+  .panel {
+    border-left: 0;
+    border-top: 3px solid #0d0e16;
+  }
+  .registro {
+    max-height: 50vh;
+  }
+}
