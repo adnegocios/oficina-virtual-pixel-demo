@@ -2,6 +2,7 @@
 
 import { ANCHO, ALTO, ASIENTOS_REUNION, Malla, dibujarFondo, dibujarDecoracion } from './escena.js';
 import { Agente } from './agentes.js';
+import { fraseTermino } from './genero.js';
 
 const ESCRIBIR = new Set(['Edit', 'Write', 'MultiEdit', 'NotebookEdit', 'Bash', 'PowerShell']);
 const LEER = new Set(['Read', 'Grep', 'Glob', 'LS', 'NotebookRead']);
@@ -103,7 +104,7 @@ export class Oficina {
       case 'SubagentStart':
         return `${quien}: empezó una tarea`;
       case 'SubagentStop':
-        return `${quien}: terminó su tarea ✓`;
+        return `${quien}: ${fraseTermino(ag?.genero)}`;
       case 'Notification':
         if (ev.etiqueta === 'permission_prompt') return `${quien}: espera tu permiso`;
         if (ev.etiqueta === 'idle_prompt') return `${quien}: espera tu respuesta`;
@@ -114,7 +115,7 @@ export class Oficina {
       case 'UserPromptSubmit':
         return ag ? `Usuario: nueva instrucción para ${ag.nombre}` : 'Usuario: nueva instrucción';
       case 'Stop':
-        return `${quien}: terminó de responder ✓`;
+        return `${quien}: ${fraseTermino(ag?.genero, 'de responder')}`;
       case 'SessionStart':
         return 'Sesión de Claude Code iniciada';
       case 'SessionEnd':

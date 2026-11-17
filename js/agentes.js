@@ -3,6 +3,7 @@
 import { spritePersona, SPR_OY } from './sprites.js';
 import { dibujarEscritorio, dibujarBurbuja, marcaCheck, puntoEntrega } from './escena.js';
 import { dibujarTexto, anchoTexto } from './fuente.js';
+import { textoListo } from './genero.js';
 
 const VELOCIDAD = 46; // píxeles por segundo
 const DURACION_ACTIVIDAD = 6; // segundos sin eventos antes de volver a "idle"
@@ -23,6 +24,7 @@ export class Agente {
     this.id = cfg.id;
     this.nombre = cfg.nombre;
     this.rol = cfg.rol;
+    this.genero = cfg.genero || 'neutro';
     this.color = cfg.apariencia.ropa;
     this.ap = { ...cfg.apariencia, id: cfg.id };
     this.malla = malla;
@@ -85,6 +87,7 @@ export class Agente {
       if (this.lleva) return 'Entregando documento';
       return this.enReunion ? 'En reunión' : 'Caminando';
     }
+    if (this.estado === 'listo') return textoListo(this.genero);
     return TEXTO_ESTADO[this.estado] || this.estado;
   }
 

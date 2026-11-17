@@ -7,9 +7,14 @@
     {
       "id": "jack-g-gerente-financiero",
       "nombre": "Jack G",
+      "genero": "masculino",
       "rol": "Gerente Financiero",
       "alias": ["gerente-financiero"],
-      "escritorio": { "x": 7, "y": 3, "tipo": "gerente" },
+      "escritorio": {
+        "x": 7,
+        "y": 3,
+        "tipo": "gerente"
+      },
       "apariencia": {
         "ropa": "#2b3a67",
         "pantalon": "#232a40",
@@ -24,9 +29,13 @@
     {
       "id": "tony-a-descarga-archivo",
       "nombre": "Tony A",
+      "genero": "masculino",
       "rol": "Descarga y Archivo (SRI)",
       "alias": ["descargas-sri"],
-      "escritorio": { "x": 2, "y": 7 },
+      "escritorio": {
+        "x": 2,
+        "y": 7
+      },
       "apariencia": {
         "ropa": "#2e8b57",
         "pantalon": "#3b4a6b",
@@ -41,26 +50,34 @@
     {
       "id": "july-r-reportes",
       "nombre": "July R",
+      "genero": "masculino",
       "rol": "Reportes y dashboard",
       "alias": ["reportes"],
-      "escritorio": { "x": 7, "y": 7 },
+      "escritorio": {
+        "x": 7,
+        "y": 7
+      },
       "apariencia": {
         "ropa": "#8e44ad",
         "pantalon": "#2f2a45",
         "piel": "#f1c27d",
         "pelo": "#24160f",
-        "peinado": "cola",
-        "accesorio": "lazo",
-        "acento": "#ff6fa8",
+        "peinado": "copete",
+        "accesorio": "barba",
+        "acento": "#5b2c6f",
         "objeto": "grafico"
       }
     },
     {
       "id": "sandy-c-contador",
       "nombre": "Sandy C",
+      "genero": "femenino",
       "rol": "Contabilidad y balances",
       "alias": ["contabilidad"],
-      "escritorio": { "x": 12, "y": 7 },
+      "escritorio": {
+        "x": 12,
+        "y": 7
+      },
       "apariencia": {
         "ropa": "#b03a48",
         "pantalon": "#2d2d3a",
@@ -75,9 +92,13 @@
     {
       "id": "beto-i-impuestos",
       "nombre": "Beto I",
+      "genero": "masculino",
       "rol": "Impuestos y declaraciones",
       "alias": ["tributacion"],
-      "escritorio": { "x": 2, "y": 11 },
+      "escritorio": {
+        "x": 2,
+        "y": 11
+      },
       "apariencia": {
         "ropa": "#d4a94f",
         "pantalon": "#4a3b2a",
@@ -92,9 +113,13 @@
     {
       "id": "martha-t-tesoreria",
       "nombre": "Martha T",
+      "genero": "femenino",
       "rol": "Tesorería: cobros, pagos y bancos",
       "alias": ["cobros-pagos"],
-      "escritorio": { "x": 7, "y": 11 },
+      "escritorio": {
+        "x": 7,
+        "y": 11
+      },
       "apariencia": {
         "ropa": "#16a085",
         "pantalon": "#2b3440",

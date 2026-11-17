@@ -37,6 +37,7 @@ function normalizarConfig(c) {
     agentes: (c.agentes || []).map((a) => ({
       id: a.id,
       nombre: String(a.nombre || a.id).slice(0, 16),
+      genero: ['masculino', 'femenino'].includes(a.genero) ? a.genero : 'neutro',
       rol: String(a.rol || ''),
       alias: Array.isArray(a.alias) ? a.alias : [],
       escritorio: { x: a.escritorio.x, y: a.escritorio.y, tipo: a.escritorio.tipo === 'gerente' ? 'gerente' : 'normal' },

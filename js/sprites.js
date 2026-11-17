@@ -85,6 +85,12 @@ function cabezaFrente(p, c, ap, o) {
     p(2, 1, 8, 2, c.pelo);
     p(4, 1, 2, 1, c.peloBrillo);
   }
+  if (pein === 'copete') {
+    p(4, -1, 5, 1, c.pelo);
+    p(6, -2, 3, 1, c.pelo);
+    p(7, -2, 1, 1, c.peloBrillo);
+    p(5, -1, 2, 1, c.peloBrillo);
+  }
   // Cara y orejas
   p(3, 3, 6, 4, c.piel);
   p(3, 6, 1, 1, c.pielSombra);
@@ -96,6 +102,10 @@ function cabezaFrente(p, c, ap, o) {
     p(2, 3, 1, 1, c.pelo);
     p(9, 3, 1, 1, c.pelo);
     p(3, 3, 2, 1, c.pelo); // flequillo
+  }
+  if (pein === 'copete') {
+    p(2, 3, 1, 2, c.pelo); // patillas
+    p(9, 3, 1, 2, c.pelo);
   }
   if (pein === 'cola') {
     p(10, 2, 1, 1, c.pelo);
@@ -148,6 +158,14 @@ function accesorioCabezaFrente(p, c, ap) {
     case 'lazo':
       p(8, 0, 3, 2, c.acento);
       p(9, 0, 1, 2, c.acentoSombra);
+      break;
+    case 'barba':
+      p(3, 5, 1, 2, c.pelo);
+      p(8, 5, 1, 2, c.pelo);
+      p(4, 6, 1, 1, c.pelo);
+      p(7, 6, 1, 1, c.pelo);
+      p(4, 7, 4, 1, c.pelo);
+      p(5, 5, 2, 1, c.pelo); // bigote
       break;
     default:
       break;
@@ -276,6 +294,7 @@ function dibujarEspalda(p, c, ap, o) {
     if (pein === 'rizado') p(1, 1, 10, 5, c.pelo);
     if (pein === 'largo') p(2, 7, 8, 3, c.pelo);
     if (pein === 'cola') p(5, 7, 2, 3, c.pelo);
+    if (pein === 'copete') p(4, -1, 5, 1, c.pelo);
   }
   p(5, 7, 2, 1, c.pielSombra);
   switch (ap.accesorio) {
@@ -327,6 +346,10 @@ function dibujarPerfil(p, c, ap, o) {
       p(1, 2, 1, 1, c.pelo);
       p(0, 3, 2, 3, c.pelo);
     }
+    if (pein === 'copete') {
+      p(4, -1, 5, 1, c.pelo);
+      p(6, -2, 4, 1, c.pelo);
+    }
   }
   p(5, 4, 1, 2, c.pielSombra); // oreja
   p(7, 4, 1, 1, OJOS);
@@ -352,6 +375,11 @@ function dibujarPerfil(p, c, ap, o) {
       break;
     case 'lazo':
       p(1, 1, 2, 2, c.acento);
+      break;
+    case 'barba':
+      p(4, 6, 3, 1, c.pelo);
+      p(6, 7, 2, 1, c.pelo);
+      p(8, 5, 1, 1, c.pelo);
       break;
     default:
       break;
